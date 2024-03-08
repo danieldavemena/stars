@@ -1,38 +1,272 @@
-.App {
-  text-align: center;
+:root {
+  --color-1: #A393BF;
+  --color-2: #9882AC;
+  --color-3: #73648A;
+  --color-4: #453750;
+  --color-5: #0C0910;
+  --color-6: #FFFF90;
+  --color-7: #fdf6e4;
+  --color-8: #17121a;
+  --color-9: #2f2636;
+  --x: 0;
+  --y: 0;
 }
 
-.App-logo {
-  height: 40vmin;
+* {
+  overflow-x: hidden;
+  cursor: default;
+}
+
+body {
+  background: var(--color-1);
+  transition: 300ms ease;
+}
+
+.topbar {
+  color: var(--color-5);
+}
+
+.toggleSwitch {
+  z-index: 100;
+  margin: 20px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 50px;
+  width: 100px;
+  content: '';
+  background: var(--color-4);
+  border-radius: 50px;
+  border: 5px solid var(--color-3);
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.circle {
+  margin: 5px;
+  height: 40px;
+  width: 40px;
+  content: '';
+  border-radius: 50px;
+  background: var(--color-6);
+  box-shadow: 0px 0px 10px white;
+  transition: 300ms ease;
+  cursor: pointer;
+}
+
+.mouseEffect {
+  display: none;
+  position: absolute;
+  background: white;
+  border-radius: 50px;
+  width: 45px;
+  height: 45px;
+  filter: blur(20px);
   pointer-events: none;
+  z-index: 1000;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.object {
+  height: 100px;
+  width: 100px;
+  background: red;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.bodyOne {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  overflow-y: hidden;
+}
+
+.bodyTwo {
+  top: 100vh;
+  background: var(--color-4);
+  transition: 300ms ease;
+  display: none;
+  flex-direction: column;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  color: var(--color-1)
 }
 
-.App-link {
-  color: #61dafb;
+.bodyThree {
+  top: 200vh;
+  background: var(--color-4);
+  transition: 300ms ease;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--color-1)
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.bodyFour {
+  top: 300vh;
+  background: var(--color-4);
+  transition: 300ms ease;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--color-1);
+  overflow-y: hidden;
+}
+
+.bodyTwo .intro {
+  font-size: 4.5em;
+  transition: 300ms ease;
+}
+
+.bodyTwo form {
+  margin-top: 5px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.bodyTwo form input[type="text"] {
+  padding: 0 30px;
+  border-radius: 50px;
+  height: 80px;
+  width: 60vw;
+  cursor: text;
+}
+
+.bodyTwo form input[type="submit"] {
+  font-size: 1.1em;
+  background-color: var(--color-3);
+  color: var(--color-7);
+  position: absolute; 
+  margin-left: 53vw;
+  padding: 0 30px;
+  border-radius: 50px;
+  height: 60px;
+  width: 10vw;
+}
+
+.bodyTwo form input[placeholder] {
+  font-size: 1.1em;
+}
+
+.bodyOne, .bodyTwo, .bodyThree, .bodyFour{
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  scrollbar-width: none;
+}
+
+.bodyOne p {
+  font-size: 1.25em;
+  color: var(--color-9);
+  font-weight: bold;
+}
+
+.bodyOne i, .innerStars i {
+  display: none;
+  position: absolute;
+  height: auto;
+  border-radius: 50px;
+  filter: blur(0.7px);
+  background: white;
+}
+
+@media screen and (max-width: 700px) {
+  .mouseEffect{
+    opacity: 0;
+    display: none;
   }
-  to {
-    transform: rotate(360deg);
+  
+  .shadow {
+    opacity: 0;
+    display: none;
+  }
+}
+
+.textAnim{
+  color: var(--color-9);
+}
+
+.time {
+  color: var(--color-1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding-left: 20px;
+  z-index: 100;
+  text-shadow: 0 0 3px var(--color-5);
+}
+
+.textAnim { 
+  font-size: 4em; 
+  font-weight: bold; 
+  font-family: arial;
+}
+
+.shadow {
+  pointer-events: none;
+  z-index: 1000;
+  position: fixed;
+  content: '';
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background: radial-gradient(circle at var(--x) var(--y), transparent 5%, rgba(0, 0, 0, 0.986) 20%);
+}
+
+.starContainer {
+  margin: 0 10%;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 5%;
+}
+
+.starImage {
+  border-radius: 10px;
+  border: 10px solid var(--color-7);
+  height: 400px;
+  width: 400px;
+  background: url('./assets/stars.jpg') no-repeat;
+  background-size: auto 100%;
+}
+
+.starContainer p {
+  color: var(--color-7);
+  text-align: justify;
+  font-size: 1.5em;
+  width: 50%;
+}
+
+.bodyFour img {
+  position: sticky;
+  left: 0;
+}
+
+.glow {
+  background-color: orange;
+  height: 500px;
+  width: 500px;
+  filter: blur(30px);
+  border-radius: 50%;
+  position: absolute;
+  top: 50;
+  left: 50;
+  transform: translate(-50% -50%);
+  animation: glow 2000ms ease-in-out infinite;
+}
+
+@keyframes glow {
+  0% {
+    filter: blur(10px);
+  }
+
+  50% {
+    filter: blur(30px);
+  }
+
+  100% {
+    filter: blur(10px);
   }
 }

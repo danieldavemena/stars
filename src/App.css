@@ -50,7 +50,7 @@ body {
   content: '';
   border-radius: 50px;
   background: var(--color-6);
-  box-shadow: 0px 0px 10px white;
+  box-shadow: 0px 0px 10px var(--color-7);
   transition: 300ms ease;
   cursor: pointer;
 }
@@ -58,7 +58,7 @@ body {
 .mouseEffect {
   display: none;
   position: absolute;
-  background: white;
+  background: var(--color-7);
   border-radius: 50px;
   width: 45px;
   height: 45px;
@@ -113,6 +113,33 @@ body {
   overflow-y: hidden;
 }
 
+.bodyFive {
+  top: 400vh;
+  background: var(--color-4);
+  transition: 300ms ease;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--color-1);
+  overflow-y: hidden;
+}
+
+.bodyFour p {
+  padding: 0 50px;
+  margin-right: 550px;
+  color: var(--color-7);
+  text-align: justify;
+  font-size: 1.5em;
+  transform: translateX(-150vh);
+  transition: 300ms ease-in;
+}
+
+.bodyFour img {
+  position: absolute;
+  right: 0;
+}
+
 .bodyTwo .intro {
   font-size: 4.5em;
   transition: 300ms ease;
@@ -149,7 +176,7 @@ body {
   font-size: 1.1em;
 }
 
-.bodyOne, .bodyTwo, .bodyThree, .bodyFour{
+.bodyOne, .bodyTwo, .bodyThree, .bodyFour, .bodyFive{
   position: absolute;
   height: 100vh;
   width: 100vw;
@@ -168,7 +195,7 @@ body {
   height: auto;
   border-radius: 50px;
   filter: blur(0.7px);
-  background: white;
+  background: var(--color-7);
 }
 
 @media screen and (max-width: 700px) {
@@ -221,6 +248,8 @@ body {
   align-items: center;
   flex-direction: row;
   gap: 5%;
+  opacity: 0;
+  transition: 500ms ease-in-out;
 }
 
 .starImage {
@@ -239,10 +268,6 @@ body {
   width: 50%;
 }
 
-.bodyFour img {
-  position: sticky;
-  left: 0;
-}
 
 .glow {
   background-color: orange;
@@ -251,9 +276,8 @@ body {
   filter: blur(30px);
   border-radius: 50%;
   position: absolute;
-  top: 50;
-  left: 50;
-  transform: translate(-50% -50%);
+  right: 50px;
+  display: flex;
   animation: glow 2000ms ease-in-out infinite;
 }
 
@@ -269,4 +293,42 @@ body {
   100% {
     filter: blur(10px);
   }
+}
+
+.linkContainer {
+  overflow: hidden;
+  width: 85vw;
+  height: 100vh;
+  display: inherit;
+  align-items: center;
+  flex-direction: row;
+  gap: 50px;
+}
+
+
+.linkContainer div {
+  border-radius: 10px;
+  text-align: justify;
+  height: 300px;
+  width: 33.3333%;
+  background: var(--color-3);
+  transform: translateY(100vh);
+  transition: 500ms ease;
+  padding: 30px;
+  font-size: 1.2em;
+  color: var(--color-7);
+}
+
+.bar {
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  content: '';
+  height: 50px;
+  width: 100vw;
+  background: var(--color-3);
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
 }

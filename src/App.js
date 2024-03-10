@@ -4,6 +4,8 @@ import BodyOne from './BodyOne';
 import {BodyTwo, nameChanged} from './BodyTwo';
 import {BodyThree} from './BodyThree';
 import {BodyFour} from './BodyFour';
+import {BodyFive} from './BodyFive';
+
 
 window.addEventListener('mousemove', e => {
   let mouse = {x: e.pageX, y: e.pageY};
@@ -13,7 +15,8 @@ window.addEventListener('mousemove', e => {
   if (i === 1) {
     mouseFX.style.top = `${mouse.y - 20}px`;
     mouseFX.style.left = `${mouse.x - 20}px`;
-    mouseFX.style.display = 'block'
+    mouseFX.style.display = 'block';
+    
   } else {
     shadow.style.setProperty('--x', `${e.clientX - 20}px`)
     shadow.style.setProperty('--y', `${e.clientY - 20}px`)
@@ -24,20 +27,50 @@ window.addEventListener('mousemove', e => {
 window.addEventListener('scroll', e => {
   let rate = window.scrollY;
   let bodyOne = document.querySelector('.bodyOne');
-  let texts = [document.querySelector('.textAnim'), document.querySelector('.bodyOne p')]
-  let innerStars = document.querySelectorAll('.innerStars i')
-  let starContainer = document.querySelector('.starContainer')
+  let bodyThree = document.querySelector('.bodyThree');
+  let bodyFour = document.querySelector('.bodyFour');
+  let bodyFive = document.querySelector('.bodyFive');
+  let texts = [document.querySelector('.textAnim'), document.querySelector('.bodyOne p')];
+  let innerStars = document.querySelectorAll('.innerStars i');
+  let one = document.querySelector('.one');
+  let two = document.querySelector('.two');
+  let three = document.querySelector('.three');
+  let starContainer = document.querySelector('.starContainer');
+  let fourText = document.querySelector('.bodyFour p');
+
   let sun = document.querySelector('.bodyFour img');
 
-  sun.style.transform = `rotate(${rate / 4 }deg)`
+  sun.style.transform = `rotate(${rate / 4 }deg)`;
   
   if (nameChanged === 1) {
-    let trigger = starContainer.getBoundingClientRect().height + starContainer.getBoundingClientRect().top
+    let trigger = bodyFive.getBoundingClientRect().y;
+    let triggerThree = bodyThree.getBoundingClientRect().y;
+    let triggerFour = bodyFour.getBoundingClientRect().y;
+
+    console.log(triggerThree);
   
-    console.log(trigger)
+    
 
     if (trigger < 100) {
+      setTimeout(() => {
+        one.style.transform = 'translateY(0)'
+      }, 50);
       
+      setTimeout(() => {
+        two.style.transform = 'translateY(0)'
+      }, 150);
+
+      setTimeout(() => {
+        three.style.transform = 'translateY(0)'
+      }, 250);
+    }
+
+    if (triggerThree < 50) {
+      starContainer.style.opacity = '1';
+    }
+
+    if (triggerFour < 100) {
+      fourText.style.transform = 'translateX(0)';
     }
   }
 
@@ -63,6 +96,7 @@ function App() {
       <BodyTwo/>
       <BodyThree/>
       <BodyFour />
+      <BodyFive />
     </div>
   );
 }

@@ -24,6 +24,7 @@ function Topbar() {
         const bodyTwo = document.querySelector('.bodyTwo');
         const bodyThree = document.querySelector('.bodyThree');
         const bodyFour = document.querySelector('.bodyFour');
+        const bodyFive = document.querySelector('.bodyFive');
         const mouse = document.querySelector('.mouseEffect');
         const shadow = document.querySelector('.shadow');
         const textAnim = document.querySelector('.textAnim');
@@ -39,6 +40,7 @@ function Topbar() {
           bodyTwo.style.display = 'flex'
           bodyThree.style.background = 'var(--color-8)';
           bodyFour.style.background = 'var(--color-8)';
+          bodyFive.style.background = 'var(--color-8)';
           mouse.style.display = 'block';
           shadow.style.display = 'none';
           textAnim.style.textShadow = '0 0 5px var(--color-7)';
@@ -59,6 +61,7 @@ function Topbar() {
           bodyTwo.style.background = 'var(--color-4)';
           bodyThree.style.background = 'var(--color-4)';
           bodyFour.style.background = 'var(--color-4)';
+          bodyFive.style.background = 'var(--color-4)';
           mouse.style.display = 'none';
           shadow.style.display = 'block';
           textAnim.style.textShadow = 'none';

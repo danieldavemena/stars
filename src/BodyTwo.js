@@ -15,12 +15,14 @@ function BodyTwo() {
       e.target[0].value = "";
       const bodyThree = document.querySelector('.bodyThree');
       const bodyFour = document.querySelector('.bodyFour');
+      const bodyFive = document.querySelector('.bodyFive');
 
       let top = window.innerHeight * 2;
       nameChanged = 1;
 
       bodyThree.style.display = 'flex';
       bodyFour.style.display = 'flex';
+      bodyFive.style.display = 'flex';
 
       setTimeout(() => {
         window.scrollTo({

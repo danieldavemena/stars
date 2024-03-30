@@ -81,6 +81,7 @@ window.addEventListener('scroll', e => {
   texts.forEach(text => {
     text.style.transform = `translateY(${rate / -2}px)`;
   })
+  
   bodyOne.style.transform = `translateY(${rate / 2}px)`;
   
   
